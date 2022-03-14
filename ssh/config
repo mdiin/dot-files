@@ -1,0 +1,6 @@
+Host *
+  IdentityFile /home/matthias/.ssh/id_rsa
+  IdentitiesOnly yes
+  LogLevel FATAL
+  AddKeysToAgent yes
+
