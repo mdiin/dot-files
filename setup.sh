@@ -9,23 +9,23 @@ export SUFFIX=PRE_CONFIG
 # - $1 target
 # - $2 source
 ##
-function guarded_replace() {
+guarded_replace() {
   echo "Setting up $2"
 
   if [ ! -e "$1" ]; then
     echo "  - $1 does not exist"
-    echo "  - Creating as symbolic link to `pwd`/$2"
-    ln -s "`pwd`/$2" "$1"
+    echo "  - Creating as symbolic link to $(pwd)/$2"
+    ln -s "$(pwd)/$2" "$1"
   elif [ ! -L "$1" ]; then
     echo "  - $1 is not a symlink"
-    echo "  - Backing up to $1_$SUFFIX and replacing with symlink to `pwd`/$2"
+    echo "  - Backing up to $1_$SUFFIX and replacing with symlink to $(pwd)/$2"
     mv "$1" "$1_$SUFFIX"
-    ln -s "`pwd`/$2" "$1"
-  elif [ "`readlink $1`" != "`pwd`/$2" ]; then
-    echo "  - $1 is a symlink pointing to `readlink $1`"
-    echo "  - Backing up to $1_$SUFFIX and replacing with symlink to `pwd`/$2"
+    ln -s "$(pwd)/$2" "$1"
+  elif [ "$(readlink "$1")" != "$(pwd)/$2" ]; then
+    echo "  - $1 is a symlink pointing to $(readlink "$1")"
+    echo "  - Backing up to $1_$SUFFIX and replacing with symlink to $(pwd)/$2"
     mv "$1" "$1_$SUFFIX"
-    ln -s "`pwd`/$2" "$1"
+    ln -s "$(pwd)/$2" "$1"
   else
     echo "  - Nothing to do here"
   fi
@@ -43,3 +43,7 @@ guarded_replace "$HOME/.psqlrc" "psql/dot_psqlrc"
 guarded_replace "$HOME/.tmux" "tmux"
 guarded_replace "$HOME/.tmux.conf" "tmux/dot_tmux.conf"
 guarded_replace "$HOME/.ssh/config" "ssh/config"
+guarded_replace "$HOME/.config/picom.conf" "picom/picom.conf"
+guarded_replace "$HOME/.config/i3" "i3"
+
+guarded_replace "$HOME/.doom.d" "doom"
