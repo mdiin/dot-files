@@ -5,7 +5,7 @@ function bass
     set -e __bash_args[1]
   end
 
-  set -l __script (python (dirname (status -f))/__bass.py $__bash_args)
+  set -l __script (python3 (dirname (status -f))/__bass.py $__bash_args)
   if test $__script = '__usage'
     echo "Usage: bass [-d] <bash-command>"
   else if test $__script = '__error'
