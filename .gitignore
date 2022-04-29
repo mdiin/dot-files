@@ -4,3 +4,4 @@ tmux/plugins/*
 tmux/resurrect/*
 **/default.target.wants/*
 
+/doom/custom.el
