@@ -4,3 +4,5 @@
 
 (nvm-use "16.13.1")
 (load-theme 'gruvbox-light-medium t)
+
+(setq deft-directory "~/kasten")
