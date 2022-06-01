@@ -9,3 +9,4 @@
 (package! nvm)
 (package! gruvbox-theme)
 (package! zetteldeft)
+(package! reason-mode)

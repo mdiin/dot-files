@@ -41,3 +41,20 @@
   "db" '(zetteldeft-backlink-add :wk "add backlink")
   "dr" '(zetteldeft-file-rename :wk "rename")
   "dx" '(zetteldeft-count-words :wk "count words"))
+
+(after! lsp-mode
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection
+                                     (-const "reason-language-server"))
+                    :major-modes '(reason-mode)
+                    :notification-handlers (ht ("client/registerCapability" 'ignore))
+                    :priority 1
+                    :server-id 'reason-ls)))
+
+(after! reason-mode
+  (add-hook! reason-mode #'lsp)
+  ;(add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t))
+  (add-hook! reason-mode (add-hook 'before-save-hook #'refmt-before-save nil t))
+  (customize-set-variable 'flycheck-check-syntax-automatically
+                          '(save idle-change idle-buffer-switch mode-enabled))
+  )
