@@ -55,6 +55,7 @@
   (add-hook! reason-mode #'lsp)
   ;(add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t))
   (add-hook! reason-mode (add-hook 'before-save-hook #'refmt-before-save nil t))
-  (customize-set-variable 'flycheck-check-syntax-automatically
-                          '(save idle-change idle-buffer-switch mode-enabled))
+  (when (featurep! :checkers syntax)
+    (customize-set-variable 'flycheck-check-syntax-automatically
+                            '(save idle-change idle-buffer-switch mode-enabled)))
   )
