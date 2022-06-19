@@ -42,20 +42,22 @@
   "dr" '(zetteldeft-file-rename :wk "rename")
   "dx" '(zetteldeft-count-words :wk "count words"))
 
-(after! lsp-mode
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection
-                                     (-const "reason-language-server"))
-                    :major-modes '(reason-mode)
-                    :notification-handlers (ht ("client/registerCapability" 'ignore))
-                    :priority 1
-                    :server-id 'reason-ls)))
+;; (after! lsp-mode
+;;   (lsp-register-client
+;;    (make-lsp-client :new-connection (lsp-stdio-connection
+;;                                      (-const "reason-language-server"))
+;;                     :major-modes '(reason-mode)
+;;                     :notification-handlers (ht ("client/registerCapability" 'ignore))
+;;                     :priority 1
+;;                     :server-id 'reason-ls)))
 
-(after! reason-mode
-  (add-hook! reason-mode #'lsp)
-  ;(add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t))
-  (add-hook! reason-mode (add-hook 'before-save-hook #'refmt-before-save nil t))
-  (when (featurep! :checkers syntax)
-    (customize-set-variable 'flycheck-check-syntax-automatically
-                            '(save idle-change idle-buffer-switch mode-enabled)))
-  )
+(after! rescript-mode
+  (setq lsp-rescript-server-command
+        '("/home/mvi/.nvm/versions/node/v16.13.1/bin/node" "/home/mvi/Programs/Rescript-LSP/out/server.js" "--stdio"))
+  ;; Tell `lsp-mode` about the `rescript-vscode` LSP server
+  (require 'lsp-rescript)
+  ;; Enable `lsp-mode` in rescript-mode buffers
+  (add-hook 'rescript-mode-hook 'lsp-deferred)
+  ;; Enable display of type information in rescript-mode buffers
+  (require 'lsp-ui)
+  (add-hook 'rescript-mode-hook 'lsp-ui-doc-mode))

@@ -9,4 +9,5 @@
 (package! nvm)
 (package! gruvbox-theme)
 (package! zetteldeft)
-(package! reason-mode)
+(package! rescript-mode)
+(package! lsp-rescript)
