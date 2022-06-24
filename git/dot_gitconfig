@@ -33,3 +33,7 @@
   reviewone = !nvim -p +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
 [pull]
 	rebase = true
+[github]
+	user = mdiin
+[init]
+	defaultBranch = main
