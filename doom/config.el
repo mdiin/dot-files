@@ -61,3 +61,15 @@
   ;; Enable display of type information in rescript-mode buffers
   (require 'lsp-ui)
   (add-hook 'rescript-mode-hook 'lsp-ui-doc-mode))
+
+(map! :nv "M-h" 'sp-backward-slurp-sexp
+      :nv "M-l" 'sp-forward-slurp-sexp
+      :nv "M-j" 'sp-backward-barf-sexp
+      :nv "M-k" 'sp-forward-barf-sexp)
+
+(map!
+ :leader
+ (:prefix-map ("c" . "code")
+  (:prefix ("p" . "parentheses")
+   :desc "rewrap" "R" #'sp-rewrap-sexp
+   :desc "raise" "r" #'sp-raise-sexp)))
