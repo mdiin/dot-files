@@ -2,45 +2,34 @@
 
 ;; Place your private configuration here
 
-(nvm-use "16.13.1")
+(nvm-use "16.15.1")
 (load-theme 'gruvbox-light-medium t)
 
 (setq deft-directory "~/kasten")
 
-(general-define-key
-  :prefix "SPC"
-  :non-normal-prefix "C-SPC"
-  :states '(normal visual motion emacs)
-  :keymaps 'override
-  "d"  '(nil :wk "deft")
-  "dd" '(deft :wk "deft")
-  "dD" '(zetteldeft-deft-new-search :wk "new search")
-  "dR" '(deft-refresh :wk "refresh")
-  "ds" '(zetteldeft-search-at-point :wk "search at point")
-  "dc" '(zetteldeft-search-current-id :wk "search current id")
-  "df" '(zetteldeft-follow-link :wk "follow link")
-  "dF" '(zetteldeft-avy-file-search-ace-window :wk "avy file other window")
-  "d." '(zetteldeft-browse :wk "browse")
-  "dh" '(zetteldeft-go-home :wk "go home")
-  "dl" '(zetteldeft-avy-link-search :wk "avy link search")
-  "dL" '(zetteldeft-insert-list-links-block :wk "insert list of links")
-  "dt" '(zetteldeft-avy-tag-search :wk "avy tag search")
-  "dT" '(zetteldeft-tag-buffer :wk "tag list")
-  "d#" '(zetteldeft-tag-insert :wk "insert tag")
-  "d$" '(zetteldeft-tag-remove :wk "remove tag")
-  "d/" '(zetteldeft-search-tag :wk "search tag")
-  "di" '(zetteldeft-find-file-id-insert :wk "insert id")
-  "d C-i" '(zetteldeft-full-search-id-insert :wk "insert id full search")
-  "dI" '(zetteldeft-find-file-full-title-insert :wk "insert full title")
-  "d C-I" '(zetteldeft-full-search-full-title-insert :wk "insert title full search")
-  "do" '(zetteldeft-find-file :wk "find file")
-  "d C-o" '(zetteldeft-full-search-find-file :wk "find full search")
-  "dn" '(zetteldeft-new-file :wk "new file")
-  "dN" '(zetteldeft-new-file-and-link :wk "new file & link")
-  "dB" '(zetteldeft-new-file-and-backlink :wk "new file & backlink")
-  "db" '(zetteldeft-backlink-add :wk "add backlink")
-  "dr" '(zetteldeft-file-rename :wk "rename")
-  "dx" '(zetteldeft-count-words :wk "count words"))
+(map!
+ :leader
+ (:prefix-map ("z" . "zettelkasten")
+  (:desc "open deft" "d" #'deft
+   :desc "new search" "/" #'zetteldeft-deft-new-search
+   :desc "refresh" "R" #'deft-refresh
+   :desc "search at point" "s" #'zetteldeft-search-at-point
+   :desc "follow link" "f" #'zetteldeft-follow-link
+   :desc "rename note" "r" #'zetteldeft-file-rename
+   :desc "new note" "n" #'zetteldeft-new-file
+   (:prefix ("N" . "new note with link")
+    :desc "with link" "l" #'zetteldeft-new-file-and-link
+    :desc "with backlink" "b" #'zetteldeft-new-file-and-backlink)
+   (:prefix ("t" . "tags")
+    :desc "add" "a" #'zetteldeft-tag-insert
+    :desc "remote" "r" #'zetteldeft-tag-remove
+    :desc "search" "/" #'zetteldeft-search-tag
+    :desc "list" "l" #'zetteldeft-tag-buffer)
+   (:prefix ("l" . "links")
+    :desc "insert id" "i" #'zetteldeft-find-file-id-insert
+    :desc "insert id+title" "t" #'zetteldeft-find-file-full-title-insert
+    :desc "insert backlink" "b" #'zetteldeft-backlink-add)
+   )))
 
 ;; (after! lsp-mode
 ;;   (lsp-register-client
