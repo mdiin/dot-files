@@ -44,8 +44,9 @@
  :aliases {:ancient {:extra-deps {olical/depot {:mvn/version "1.5.1"}}
                      :main-opts ["-m" "depot.outdated.main"]}
            :benchmark {:extra-deps {criterium/criterium {:mvn/version "0.4.4"}}}
+           :portal {:extra-deps {djblue/portal {:mvn/version "0.32.0"}}}
            :addlib {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha.git"
-                                                               :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
+                                                               :git/sha "8f8fc2571e721301b6d52e191129248355cb8c5a"}}}
            :migrer {:extra-deps {migrer-cli/migrer-cli {:git/url "https://github.com/mdiin/migrer-cli" :sha "b5e2663a2a70b36b95183cf5d1a23b12188127ed"}}
                     :main-opts ["-m" "migrer-cli.main"]}
            :cambada {:extra-deps
@@ -53,8 +54,9 @@
                      #_{github-xfthhxk/cambada {:git/url "https://github.com/xfthhxk/cambada" :sha "8fdc7d29a41620ad3e9e6210fd7140f3a4c7936b"}}
                      #_{luchiniatwork/cambada {:mvn/version "1.0.0"}}}
            :reveal {:extra-deps {vlaaad/reveal {:mvn/version "1.3.212"}}}
-           :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "RELEASE"}
-                                cider/cider-nrepl {:mvn/version "RELEASE"}}
+           :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                                cider/cider-nrepl {:mvn/version "0.28.5"}
+                                refactor-nrepl/refactor-nrepl {:mvn/version "3.5.2"}}
                    :main-opts ["-m" "nrepl.cmdline"]}
            :socket {:extra-deps {vlaaad/reveal {:mvn/version "1.3.212"}}
                     :jvm-opts ["-Dclojure.server.reveal={:port,50505,:accept,vlaaad.reveal/io-prepl}"]}
