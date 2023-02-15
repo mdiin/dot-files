@@ -62,3 +62,8 @@
   (:prefix ("p" . "parentheses")
    :desc "rewrap" "R" #'sp-rewrap-sexp
    :desc "raise" "r" #'sp-raise-sexp)))
+
+;; Guide eshell to use full-blown terminal emulator for these commands, subcommands and options
+;(add-to-list 'eshell-visual-commands '("git"))
+;(add-to-list 'eshell-visual-options '("git" "--help"))
+(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
