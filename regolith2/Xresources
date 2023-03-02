@@ -1,0 +1,10 @@
+regolith.wallpaper.file: /home/mvi/Pictures/Backgrounds/moon-sea.jpg
+!regolith.look.path: /usr/share/regolith-look/gruvbox
+regolith.look.path: /usr/share/regolith-look/ayu
+
+## Gap configuration
+i3-wm.gaps.inner.size: 10
+
+## Border configuration
+i3-wm.window.border.size: 6
+i3-wm.client.focused.color.child_border: #AAD3E9
