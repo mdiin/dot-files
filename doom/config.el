@@ -66,4 +66,4 @@
 ;; Guide eshell to use full-blown terminal emulator for these commands, subcommands and options
 ;(add-to-list 'eshell-visual-commands '("git"))
 ;(add-to-list 'eshell-visual-options '("git" "--help"))
-(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
+;(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
