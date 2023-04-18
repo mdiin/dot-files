@@ -67,3 +67,6 @@
 ;(add-to-list 'eshell-visual-commands '("git"))
 ;(add-to-list 'eshell-visual-options '("git" "--help"))
 ;(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
+
+(map! :map meow-normal-state-keymap
+      "z" #'recenter)
