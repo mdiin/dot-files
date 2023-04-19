@@ -68,5 +68,45 @@
 ;(add-to-list 'eshell-visual-options '("git" "--help"))
 ;(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
 
+(setq meow-paren-keymap (make-keymap))
+
+(meow-define-state paren
+  "meow state for interacting with smart-parens"
+  :lighter " [P]"
+  :keymap meow-paren-keymap)
+
+(setq meow-cursor-type-paren 'hollow)
+
+(meow-define-keys 'paren
+  '("<escape>" . meow-normal-mode)
+  '("u" . meow-undo)
+  '("h" . sp-backward-sexp)
+  '("j" . sp-down-sexp)
+  '("k" . sp-up-sexp)
+  '("l" . sp-forward-sexp)
+  '("M-h" . sp-backward-slurp-sexp)
+  '("C-h" . sp-backward-barf-sexp)
+  '("M-l" . sp-forward-slurp-sexp)
+  '("C-l" . sp-forward-barf-sexp))
+
 (map! :map meow-normal-state-keymap
-      "z" #'recenter)
+      ;; Extremely high frequency keybindings
+      "K" "C-c c k"
+      "P" #'meow-paren-mode
+      "$" #'repeat)
+
+(map! :map meow-keypad-state-keymap
+      ;;
+      ;; High-frequency keybindings
+      "e" "C-x C-e"
+
+      ;; Window management
+      "w" #'other-window
+      "W" #'window-swap-states
+      "o" #'delete-other-windows
+      "|" #'split-window-horizontally
+      "-" #'split-window-vertically
+      "z" #'recenter
+
+      ;; High-frequency commands
+      ";" #'comment-dwim)
