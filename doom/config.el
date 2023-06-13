@@ -5,6 +5,7 @@
 (nvm-use "16.15.1")
 (load-theme 'gruvbox-light-medium t)
 
+(setq calendar-week-start-day 1)
 (setq deft-directory "~/kasten")
 
 (map!
