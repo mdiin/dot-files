@@ -14,3 +14,5 @@ set -x GITHUB_ACCESS_TOKEN 1172ec0c1a233e1e75e68339943c0dfa5fb6b4c1
 set -x MYVIMRC $HOME/.config/nvim/init.vim
 
 # nvm use default --silent
+
+starship init fish | source
