@@ -1,5 +1,7 @@
 ;;; tools/present/config.el -*- lexical-binding: t; -*-
 
+;; Based on https://systemcrafters.net/emacs-tips/presentations-with-org-present/
+
 (defun my-org-present/org-present-prepare-slide (buffer-name heading)
   (org-overview)
   (org-show-entry)
