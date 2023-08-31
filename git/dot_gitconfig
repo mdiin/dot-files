@@ -4,8 +4,8 @@
 [push]
 	default = simple
 [core]
-	editor = nvim
 	excludesfile = $HOME/.gitignore
+	editor = emacs
 [pull]
 	rebase = true
 [github]
