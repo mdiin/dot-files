@@ -69,6 +69,10 @@
 ;(add-to-list 'eshell-visual-options '("git" "--help"))
 ;(add-to-list 'eshell-visual-subcommands '("git" "log" "diff" "show"))
 
+;; CIDER customizations
+(setq cider-show-error-buffer nil)
+
+;; Meow customizations
 (setq meow-paren-keymap (make-keymap))
 
 (meow-define-state paren
