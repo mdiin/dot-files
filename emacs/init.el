@@ -85,7 +85,7 @@
 
 (require 'eglot)
 
-(add-hook 'clojure-mode-hook #'eglot)
+(add-hook 'clojure-mode-hook 'eglot-ensure)
 
 (define-key eglot-mode-map (kbd "C-c C-a") 'eglot-code-actions)
 
