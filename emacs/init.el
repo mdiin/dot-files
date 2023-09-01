@@ -1,5 +1,20 @@
 (require 'package)
 
+;;; MELPA
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+
+;;; Modify C-w to kill whole line or region
+
+(unless (package-installed-p 'whole-line-or-region)
+  (package-install 'whole-line-or-region))
+
+(require 'whole-line-or-region)
+(whole-line-or-region-global-mode t)
+
+
 ;;; Languages
 
 ;;- Clojure
@@ -68,7 +83,11 @@
 (unless (package-installed-p 'eglot)
   (package-install 'eglot))
 
+(require 'eglot)
+
 (add-hook 'clojure-mode-hook #'eglot)
+
+(define-key eglot-mode-map (kbd "C-c C-a") 'eglot-code-actions)
 
 
 ;;; Git
@@ -83,6 +102,8 @@
 
 (fido-vertical-mode t)
 (icomplete-vertical-mode t)
+
+(global-set-key (kbd "M-i") 'imenu)
 
 
 (custom-set-variables
