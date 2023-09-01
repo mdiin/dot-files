@@ -1,3 +1,15 @@
+(require 'package)
+
+;;; Languages
+
+;;- Clojure
+
+(unless (package-installed-p 'clojure-mode)
+  (package-install 'clojure-mode))
+
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
+
 ;;; Theme
 
 (unless (package-installed-p 'solarized)
@@ -41,6 +53,9 @@
 (unless (package-installed-p 'adjust-parens)
   (package-install 'adjust-parens))
 
+(unless (package-installed-p 'dash)
+  (package-install 'dash))
+
 (require 'smartparens)
 (require 'adjust-parens)
 (smartparens-mode t)
@@ -54,6 +69,12 @@
   (package-install 'eglot))
 
 (add-hook 'clojure-mode-hook #'eglot)
+
+
+;;; Git
+
+(unless (package-installed-p 'magit)
+  (package-install 'magit))
 
 ;;; Other setup
 
