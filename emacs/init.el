@@ -1,5 +1,10 @@
 (require 'package)
 
+;;; Ripgrep
+
+(unless (package-installed-p 'rg)
+  (package-install 'rg))
+
 ;;; MELPA
 
 (add-to-list 'package-archives
@@ -116,7 +121,7 @@
    '("51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "524fa911b70d6b94d71585c9f0c5966fe85fb3a9ddd635362bfabd1a7981a307" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" default))
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (clojure . t)))
  '(package-selected-packages
-   '(smart-parens adjust-parens smartparens org solarized magit which-key flymake flymake-kondor editorconfig eglot projectile cider clojure-mode solarized-theme)))
+   '(rg whole-line-or-region smart-parens adjust-parens smartparens org solarized magit which-key flymake flymake-kondor editorconfig eglot projectile cider clojure-mode solarized-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
