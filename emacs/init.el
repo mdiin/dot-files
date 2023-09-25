@@ -1,4 +1,27 @@
+;;; Package management
+
 (require 'package)
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+(setq use-package-always-defer t
+      use-package-always-ensure t)
+
+;;; Editorconfig
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 
 ;;; YAML
 
@@ -10,12 +33,6 @@
 (unless (package-installed-p 'rg)
   (package-install 'rg))
 
-;;; MELPA
-
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
-
 ;;; Modify C-w to kill whole line or region
 
 (unless (package-installed-p 'whole-line-or-region)
@@ -26,6 +43,19 @@
 
 
 ;;; Languages
+
+;;- LSP
+
+(use-package eglot
+  :pin melpa-stable
+  :hook ((clojure-mode . eglot-ensure)
+	 (kotlin-mode . eglot-ensure))
+  :bind (("C-c C-a" . eglot-code-actions)))
+
+;;- Kotlin
+
+(use-package kotlin-mode)
+
 
 ;;- Clojure
 
@@ -83,21 +113,9 @@
 
 (require 'smartparens)
 (require 'adjust-parens)
-(smartparens-mode t)
+(smartparens-global-mode t)
 (add-hook 'emacs-lisp-mode-hook #'adjust-parens-mode)
 (add-hook 'clojure-mode-hook #'adjust-parens-mode)
-
-
-;;; LSP
-
-(unless (package-installed-p 'eglot)
-  (package-install 'eglot))
-
-(require 'eglot)
-
-(add-hook 'clojure-mode-hook 'eglot-ensure)
-
-(define-key eglot-mode-map (kbd "C-c C-a") 'eglot-code-actions)
 
 
 ;;; Git
@@ -130,7 +148,8 @@
    '("51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "524fa911b70d6b94d71585c9f0c5966fe85fb3a9ddd635362bfabd1a7981a307" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" default))
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (clojure . t)))
  '(package-selected-packages
-   '(yaml-mode rg whole-line-or-region smart-parens adjust-parens smartparens org solarized magit which-key flymake flymake-kondor editorconfig eglot projectile cider clojure-mode solarized-theme)))
+   '(kotlin-mode company lsp-ui lsp-metals lsp-mode sbt-mode scala-mode use-package yaml-mode rg whole-line-or-region smart-parens adjust-parens smartparens org solarized magit which-key flymake flymake-kondor editorconfig eglot projectile cider clojure-mode solarized-theme))
+ '(warning-suppress-types '((comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
