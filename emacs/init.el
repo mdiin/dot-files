@@ -133,6 +133,9 @@
 
 (global-set-key (kbd "M-i") 'imenu)
 
+;; Avy
+(global-set-key (kbd "C-M-g") 'avy-goto-word-1)
+(global-set-key (kbd "C-M-s-g") 'avy-goto-word-0)
 
 (add-to-list 'load-path "~/.config/emacs/lisp")
 (require 'structurizr-mode)
