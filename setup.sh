@@ -31,7 +31,7 @@ guarded_replace() {
   fi
 }
 
-guarded_replace "$HOME/.config/fish" "fish"
+# guarded_replace "$HOME/.config/fish" "fish"
 guarded_replace "$HOME/.config/systemd" "systemd"
 systemctl --user daemon-reload
 systemctl --user enable ssh-agent.service
@@ -40,10 +40,10 @@ guarded_replace "$HOME/.gitconfig" "git/dot_gitconfig"
 guarded_replace "$HOME/.clojure" "clojure"
 
 guarded_replace "$HOME/.psqlrc" "psql/dot_psqlrc"
-guarded_replace "$HOME/.tmux" "tmux"
-guarded_replace "$HOME/.tmux.conf" "tmux/dot_tmux.conf"
+# guarded_replace "$HOME/.tmux" "tmux"
+# guarded_replace "$HOME/.tmux.conf" "tmux/dot_tmux.conf"
 guarded_replace "$HOME/.ssh/config" "ssh/config"
-guarded_replace "$HOME/.config/picom.conf" "picom/picom.conf"
-guarded_replace "$HOME/.config/i3" "i3"
+# guarded_replace "$HOME/.config/picom.conf" "picom/picom.conf"
+# guarded_replace "$HOME/.config/i3" "i3"
 
-guarded_replace "$HOME/.doom.d" "doom"
+# guarded_replace "$HOME/.doom.d" "doom"
