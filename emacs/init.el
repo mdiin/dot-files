@@ -140,6 +140,15 @@
 (add-to-list 'load-path "~/.config/emacs/lisp")
 (require 'structurizr-mode)
 
+;; Whitespace handling
+(setq-default indent-tabs-mode nil)
+
+(defun my/after-save-actions ()
+  "Used in 'after-save-hook'."
+  (when (memq this-command '(save-buffer save-some-buffers save-buffers-kill-emacs write-file))
+    (whitespace-cleanup)))
+
+(add-hook 'after-save-hook 'my/after-save-actions)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
