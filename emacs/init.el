@@ -19,19 +19,19 @@
 
 ;;; Config parts
 
-(load "~/.config/emacs/lisp/editorconfig.el")
-(load "~/.config/emacs/lisp/ripgrep.el")
+(load "~/.config/emacs/lisp/editorconfig-config.el")
+(load "~/.config/emacs/lisp/ripgrep-config.el")
 (load "~/.config/emacs/lisp/conveniences.el")
-(load "~/.config/emacs/lisp/theme.el")
-(load "~/.config/emacs/lisp/eglot.el")
-(load "~/.config/emacs/lisp/languages/clojure.el")
-(load "~/.config/emacs/lisp/languages/kotlin.el")
-(load "~/.config/emacs/lisp/languages/yaml.el")
-(load "~/.config/emacs/lisp/languages/structurizr.el")
-(load "~/.config/emacs/lisp/other/eshell.el")
-(load "~/.config/emacs/lisp/other/git.el")
-(load "~/.config/emacs/lisp/other/org.el")
-(load "~/.config/emacs/lisp/other/projectile.el")
+(load "~/.config/emacs/lisp/theme-config.el")
+(load "~/.config/emacs/lisp/eglot-config.el")
+(load "~/.config/emacs/lisp/languages/clojure-config.el")
+(load "~/.config/emacs/lisp/languages/kotlin-config.el")
+(load "~/.config/emacs/lisp/languages/yaml-config.el")
+(load "~/.config/emacs/lisp/languages/structurizr-config.el")
+(load "~/.config/emacs/lisp/other/eshell-config.el")
+(load "~/.config/emacs/lisp/other/git-config.el")
+(load "~/.config/emacs/lisp/other/org-config.el")
+(load "~/.config/emacs/lisp/other/projectile-config.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
