@@ -1,0 +1,3 @@
+;;; Structurizr
+
+(require 'structurizr-mode)

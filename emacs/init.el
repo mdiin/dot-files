@@ -15,140 +15,23 @@
 (setq use-package-always-defer t
       use-package-always-ensure t)
 
-;;; Editorconfig
-
-(use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode 1))
-
-
-;;; YAML
-
-(unless (package-installed-p 'yaml-mode)
-  (package-install 'yaml-mode))
-
-;;; Ripgrep
-
-(unless (package-installed-p 'rg)
-  (package-install 'rg))
-
-;;; Modify C-w to kill whole line or region
-
-(unless (package-installed-p 'whole-line-or-region)
-  (package-install 'whole-line-or-region))
-
-(require 'whole-line-or-region)
-(whole-line-or-region-global-mode t)
-
-
-;;; Languages
-
-;;- LSP
-
-(use-package eglot
-  :pin melpa-stable
-  :hook ((clojure-mode . eglot-ensure)
-	 (kotlin-mode . eglot-ensure))
-  :bind (("C-c C-a" . eglot-code-actions)))
-
-;;- Kotlin
-
-(use-package kotlin-mode)
-
-
-;;- Clojure
-
-(unless (package-installed-p 'clojure-mode)
-  (package-install 'clojure-mode))
-
-(unless (package-installed-p 'cider)
-  (package-install 'cider))
-
-;;; Theme
-
-(unless (package-installed-p 'solarized)
-  (package-install 'solarized-theme))
-
-(require 'solarized-theme)
-(load-theme 'solarized-zenburn t)
-
-;;; Projectile
-
-(unless (package-installed-p 'projectile)
-  (package-install 'projectile))
-
-(add-to-list 'package-pinned-packages '(projectile . "melpa-stable") t)
-
-(require 'projectile)
-
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(projectile-global-mode +1)
-
-;;; Org
-
-(unless (package-installed-p 'org)
-  (package-install 'org))
-
-(require 'org)
-
-;;; Eshell
-
-(defun eshell-new()
-  "Open a new instance of eshell."
-  (interactive)
-  (eshell 'N))
-
-
-;;; Smart parens
-
-(unless (package-installed-p 'smartparens)
-  (package-install 'smartparens))
-
-(unless (package-installed-p 'adjust-parens)
-  (package-install 'adjust-parens))
-
-(unless (package-installed-p 'dash)
-  (package-install 'dash))
-
-(require 'smartparens)
-(require 'adjust-parens)
-(smartparens-global-mode t)
-(add-hook 'emacs-lisp-mode-hook #'adjust-parens-mode)
-(add-hook 'clojure-mode-hook #'adjust-parens-mode)
-
-
-;;; Git
-
-(unless (package-installed-p 'magit)
-  (package-install 'magit))
-
-;;; Other setup
-
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-
-(fido-vertical-mode t)
-(icomplete-vertical-mode t)
-
-(global-set-key (kbd "M-i") 'imenu)
-
-;; Avy
-(global-set-key (kbd "C-M-g") 'avy-goto-word-1)
-(global-set-key (kbd "C-M-s-g") 'avy-goto-word-0)
-
 (add-to-list 'load-path "~/.config/emacs/lisp")
-(require 'structurizr-mode)
 
-;; Whitespace handling
-(setq-default indent-tabs-mode nil)
+;;; Config parts
 
-(defun my/after-save-actions ()
-  "Used in 'after-save-hook'."
-  (when (memq this-command '(save-buffer save-some-buffers save-buffers-kill-emacs write-file))
-    (whitespace-cleanup)))
-
-(add-hook 'after-save-hook 'my/after-save-actions)
+(load "~/.config/emacs/lisp/editorconfig.el")
+(load "~/.config/emacs/lisp/ripgrep.el")
+(load "~/.config/emacs/lisp/conveniences.el")
+(load "~/.config/emacs/lisp/theme.el")
+(load "~/.config/emacs/lisp/eglot.el")
+(load "~/.config/emacs/lisp/languages/clojure.el")
+(load "~/.config/emacs/lisp/languages/kotlin.el")
+(load "~/.config/emacs/lisp/languages/yaml.el")
+(load "~/.config/emacs/lisp/languages/structurizr.el")
+(load "~/.config/emacs/lisp/other/eshell.el")
+(load "~/.config/emacs/lisp/other/git.el")
+(load "~/.config/emacs/lisp/other/org.el")
+(load "~/.config/emacs/lisp/other/projectile.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
