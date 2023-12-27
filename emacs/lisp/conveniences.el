@@ -28,8 +28,8 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(fido-vertical-mode t)
-(icomplete-vertical-mode t)
+;; (fido-vertical-mode t)
+;; (icomplete-vertical-mode t)
 
 (global-set-key (kbd "M-i") 'imenu)
 
