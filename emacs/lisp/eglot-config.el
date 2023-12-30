@@ -4,7 +4,13 @@
   :pin melpa-stable
   :hook ((clojure-mode . eglot-ensure)
          (kotlin-mode . eglot-ensure))
-  :bind (("C-c C-a" . eglot-code-actions))
+  :bind (("C-c l a" . eglot-code-actions)
+         ("C-c l r" . eglot-rename)
+         ("C-c l f i" . eglot-find-implementation)
+         ("C-c l f d" . eglot-find-declaration)
+         ("C-c l f t" . eglot-find-typeDefinition)
+         ("C-c l = =" . eglot-format-buffer)
+         ("C-c l = r" . eglot-format))
 
   :init
   (setq eglot-managed-mode-hook (list (lambda () (eldoc-mode -1)))))
