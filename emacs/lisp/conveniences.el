@@ -33,9 +33,10 @@
 
 (global-set-key (kbd "M-i") 'imenu)
 
-;; Avy
-(global-set-key (kbd "C-M-g") 'avy-goto-word-1)
-(global-set-key (kbd "C-M-s-g") 'avy-goto-word-0)
+;; Avy - Jumping to other windows and visible words
+(use-package avy
+  :bind (("M-G c" . avy-goto-char-timer)
+         ("M-G w" . avy-goto-word-1)))
 
 ;; Whitespace handling
 (setq-default indent-tabs-mode nil)
