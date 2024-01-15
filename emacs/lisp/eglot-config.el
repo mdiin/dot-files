@@ -2,8 +2,7 @@
 
 (use-package eglot
   :pin melpa-stable
-  :hook ((clojure-mode . eglot-ensure)
-         (kotlin-mode . eglot-ensure))
+  :hook ((clojure-mode . eglot-ensure))
   :bind (("C-c l a" . eglot-code-actions)
          ("C-c l r" . eglot-rename)
          ("C-c l f i" . eglot-find-implementation)
