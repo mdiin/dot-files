@@ -35,6 +35,9 @@
 (load "~/.config/emacs/lisp/other/projectile-config.el")
 (load "~/.config/emacs/lisp/other/completion-config.el")
 
+(eval-after-load "sql"
+  '(load-library "sql-indent"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
