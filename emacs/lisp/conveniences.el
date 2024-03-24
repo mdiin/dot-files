@@ -1,3 +1,8 @@
+;;; Expand region
+
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 ;;; Modify C-w to kill whole line or region
 
 (unless (package-installed-p 'whole-line-or-region)
