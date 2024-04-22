@@ -10,7 +10,12 @@
                                       :project-file "build.gradle.kts"
                                       :compile "./gradlew build"
                                       :test "./gradlew test"
-                                      :run "./gradlew bootRun"))
+                                      :run "./gradlew bootRun")
+    (projectile-register-project-type 'maven-kts '("pom.xml")
+                                      :project-file "pom.xml"
+                                      :compile "mvn compile"
+                                      :test "mvn test"
+                                      :run ""))
   ;; :init
   ;; (add-to-list 'eglot-server-programs
   ;;              `(kotlin-mode . ("kotlin-language-server" :initializationOptions
