@@ -3,6 +3,14 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+;;; Multiple cursors
+
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C->" . mc/mark-next-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
+
 ;;; Modify C-w to kill whole line or region
 
 (unless (package-installed-p 'whole-line-or-region)
