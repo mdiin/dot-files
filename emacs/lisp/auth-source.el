@@ -1,3 +1,13 @@
+;;; How-to kdewallet an auth-source
+;;;
+;;; - name the password: <USER>^<PACKAGE>@<HOST>
+;;; - provide the secret in the contents
+;;;
+;;; Example:
+;;;
+;;; - password name: mdiin^forge@api.github.com
+;;; - password contents: abcdefghijklmn
+
 (use-package auth-source-kwallet
   :load-path "lisp/"
   :init
