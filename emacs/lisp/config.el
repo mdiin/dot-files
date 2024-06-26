@@ -37,6 +37,7 @@
 (load "~/.config/emacs/lisp/other/org-config.el")
 (load "~/.config/emacs/lisp/other/projectile-config.el")
 (load "~/.config/emacs/lisp/other/completion-config.el")
+(load "~/.config/emacs/list/rss.el")
 
 (eval-after-load "sql"
   '(load-library "sql-indent"))
