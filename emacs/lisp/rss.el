@@ -4,6 +4,8 @@
   (setq elfeed-feeds '(
                        ;; Programming / ethics / common sense
                        ("https://ludic.mataroa.blog/rss/" ludic)
+                       ("https://world.hey.com/dhh/feed.atom" dhh-hey-world)
+                       ("https://world.hey.com/jason/feed.atom" jason-fried-hey-world)
 
                        ;; Programming languages
                        ("https://clojure.org/feed.xml" clojure)
