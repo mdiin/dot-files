@@ -1,14 +1,13 @@
 (use-package visual-fill-column
   :config
   (setq visual-fill-column-width 110
-        visual-fill-column-center-text t))
+        visual-fill-column-center-text 't))
 
 (defun my/org-present-start ()
   (interactive)
+  (visual-line-fill-column-mode 1)
   (menu-bar-mode 0)
 
-  (visual-fill-column-mode 1)
-  (visual-line-mode 1)
 
   (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
                                      (header-line (:height 4.0) variable-pitch)
@@ -24,8 +23,7 @@
 (defun my/org-present-end ()
   (interactive)
   (menu-bar-mode 1)
-  (visual-fill-column-mode 0)
-  (visual-line-mode 0)
+  (visual-line-fill-column-mode 0)
 
   (setq-local face-remapping-alist nil)
 
@@ -63,12 +61,11 @@
 (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 
-
-
+(require 'org-faces)
 
 (use-package org-present
-  :after '(visual-fill-column org-faces)
-  :config
+  :after visual-fill-column
+  :init
   (add-hook 'org-present-mode-hook 'my/org-present-start)
   (add-hook 'org-present-mode-quit-hook 'my/org-present-end)
   )
