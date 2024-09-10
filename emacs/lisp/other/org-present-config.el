@@ -5,13 +5,16 @@
 
   (menu-bar-mode 0)
 
+  (set-frame-parameter nil 'alpha-background 0)
+  (load-theme 'solarized-light)
+
   (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
                                      (header-line (:height 4.0) variable-pitch)
                                      (org-document-title (:height 1.75) org-document-title)
-                                     (org-code (:height 1.55) org-code)
-                                     (org-verbatim (:height 1.55) org-verbatim)
-                                     (org-block (:height 1.25) org-block)
-                                     (org-block-begin-line (:height 0.7) org-block)))
+                                     (org-verbatim (:height 1.0) org-verbatim)
+                                     (org-block (:height 0.65) org-block)
+                                     (org-block-begin-line (:height 0.7) org-block)
+                                     ))
 
   (setq header-line-format " ")
 
@@ -30,6 +33,8 @@
   (setq header-line-format nil)
 
   (setq mode-line-format my/stored-mode-line-format)
+  (set-frame-parameter nil 'alpha-background 100)
+  (load-theme 'solarized-zenburn)
   )
 
 (defun my/org-present-prepare-slide (buffer-name heading)
