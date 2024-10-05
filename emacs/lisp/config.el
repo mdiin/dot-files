@@ -14,7 +14,7 @@
 
 (require 'use-package)
 
-(setq use-package-always-pin "nongnu"
+(setq use-package-always-pin "melpa-stable"
       use-package-always-defer t
       use-package-always-ensure t)
 
