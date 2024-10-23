@@ -49,6 +49,7 @@
   )
 
 (use-package org-present
+  :pin nongnu
   :init
   (add-hook 'org-present-mode-hook 'my/org-present-start)
   (add-hook 'org-present-mode-quit-hook 'my/org-present-end)
