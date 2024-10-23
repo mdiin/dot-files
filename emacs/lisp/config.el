@@ -29,6 +29,7 @@
 (load "~/.config/emacs/lisp/theme-config.el")
 (load "~/.config/emacs/lisp/eglot-config.el")
 (load "~/.config/emacs/lisp/tree-sitter-config.el")
+(load "~/.config/emacs/lisp/languages/typescript-config.el")
 (load "~/.config/emacs/lisp/languages/clojure-config.el")
 (load "~/.config/emacs/lisp/languages/kotlin-config.el")
 (load "~/.config/emacs/lisp/languages/yaml-config.el")
