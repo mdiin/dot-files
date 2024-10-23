@@ -7,8 +7,8 @@
   :config
   (set-face-attribute 'default nil :font "Fantasque Sans Mono" :weight 'light :height 120)
   (set-face-attribute 'fixed-pitch nil :font "Fantasque Sans Mono" :weight 'light :height 120)
-  ;(set-face-attribute 'variable-pitch nil :font "Noto Sans" :weight 'light :height 1.3)
-  (set-face-attribute 'variable-pitch nil :font "Poppins" :weight 'light :height 1.3)
+  (set-face-attribute 'variable-pitch nil :font "Noto Sans" :weight 'light :height 1.3)
+;  (set-face-attribute 'variable-pitch nil :font "Poppins" :weight 'light :height 1.3)
   (setq org-hide-emphasis-markers t)
   (dolist (face '((org-level-1 . (1.3 . nil))
                   (org-level-2 . (1.1 . nil))
