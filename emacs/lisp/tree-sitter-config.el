@@ -31,4 +31,4 @@
           (unless (treesit-language-available-p (car grammar))
             (treesit-install-language-grammar (car grammar)))))
 
-(os/setup-install-grammars)
+;; (os/setup-install-grammars)
