@@ -2,11 +2,10 @@
 
 (use-package prettier)
 
-(add-hook 'typescript-ts-mode 'eglot-ensure)
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 
-(defun myconf/setup-typescript-mode ()
-  "Setup of Typescript mode."
-  (interactive)
-  (setq ))
+(defun config/typescript-setup ()
+  (eglot-ensure)
+  (config/maybe-treesit-install-language-grammar 'typescript))
 
-(add-hook 'typescript-ts-mode 'myconf/setup-typescript-mode)
+(add-hook 'typescript-ts-mode 'config/typescript-setup)
