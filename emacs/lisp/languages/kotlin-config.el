@@ -16,6 +16,7 @@
                                       :compile "mvn compile"
                                       :test "mvn test"
                                       :run ""))
+  (config/maybe-treesit-install-language-grammar 'kotlin)
   ;; :init
   ;; (add-to-list 'eglot-server-programs
   ;;              `(kotlin-mode . ("kotlin-language-server" :initializationOptions
