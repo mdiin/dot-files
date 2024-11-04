@@ -9,4 +9,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.java\\'" . java-ts-mode))
 
-(add-hook 'java-mode-hook 'config/java-setup)
+;; (add-hook 'java-mode-hook 'config/java-setup)
+
+(add-hook 'java-ts-mode-hook 'config/java-setup)
