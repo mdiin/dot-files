@@ -20,6 +20,11 @@
 
 (add-to-list 'load-path "~/.config/emacs/lisp")
 
+;;; General config
+
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
 ;;; Config parts
 
 (load "~/.config/emacs/lisp/auth-source.el")
