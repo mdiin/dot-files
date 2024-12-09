@@ -4,6 +4,12 @@
   :init
   (add-hook 'org-mode-hook (lambda () (variable-pitch-mode 1)))
 
+  :bind (("C-c C-x :" . org-capture)
+         ("C-c C-x C-:" . org-capture)
+         ("C-c C-x c" . org-clock-out)
+         ("C-c C-x C-c" . org-clock-out)
+         ("C-c C-x r" . org-clock-in-last)
+         ("C-c C-x C-r" . org-clock-in-last))
   :config
   (set-face-attribute 'default nil :font "Fantasque Sans Mono" :weight 'light :height 120)
   (set-face-attribute 'fixed-pitch nil :font "Fantasque Sans Mono" :weight 'light :height 120)
