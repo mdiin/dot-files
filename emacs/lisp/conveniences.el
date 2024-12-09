@@ -60,3 +60,8 @@
     (whitespace-cleanup)))
 
 (add-hook 'after-save-hook 'my/after-save-actions)
+
+
+;; ANSI colors in comilation buffer
+(use-package ansi-color
+  :hook (compilation-filter . ansi-color-compilation-filter))
