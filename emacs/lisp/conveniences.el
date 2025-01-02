@@ -54,12 +54,12 @@
 ;; Whitespace handling
 (setq-default indent-tabs-mode nil)
 
-(defun my/after-save-actions ()
-  "Used in 'after-save-hook'."
+(defun my/before-save-actions ()
+  "Used in 'before-save-hook'."
   (when (memq this-command '(save-buffer save-some-buffers save-buffers-kill-emacs write-file))
     (whitespace-cleanup)))
 
-(add-hook 'after-save-hook 'my/after-save-actions)
+(add-hook 'before-save-hook 'my/before-save-actions)
 
 
 ;; ANSI colors in comilation buffer
