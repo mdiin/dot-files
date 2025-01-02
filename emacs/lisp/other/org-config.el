@@ -1,5 +1,7 @@
 ;;; Org
 
+(use-package verb)
+
 (use-package org
   :init
   (add-hook 'org-mode-hook (lambda () (variable-pitch-mode 1)))
@@ -11,6 +13,7 @@
          ("C-c C-x r" . org-clock-in-last)
          ("C-c C-x C-r" . org-clock-in-last))
   :config
+  (define-key org-mode-map (kbd "C-c C-r") verb-command-map)
   (set-face-attribute 'default nil :font "Fantasque Sans Mono" :weight 'light :height 120)
   (set-face-attribute 'fixed-pitch nil :font "Fantasque Sans Mono" :weight 'light :height 120)
   (set-face-attribute 'variable-pitch nil :font "Noto Sans" :weight 'light :height 1.3)
