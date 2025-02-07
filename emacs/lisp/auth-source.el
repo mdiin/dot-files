@@ -10,6 +10,7 @@
 
 (use-package auth-source-kwallet
   :load-path "lisp/"
+  :autoload auth-source-kwallet-enable
   :init
   (auth-source-kwallet-enable)
 
