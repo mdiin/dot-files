@@ -83,9 +83,13 @@
   :ensure t
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
-(use-package consult-projectile
-  :load-path "lisp/"
-  :bind (("C-c P" . consult-projectile)))
+;; (use-package consult-projectile
+;;   :load-path "lisp/"
+;;   :bind (("C-c P" . consult-projectile)))
+
+(use-package consult-project-extra
+  :ensure t
+  :bind (("C-x p p" . consult-project-extra-find)))
 
 (use-package consult-eglot
   :load-path "lisp/"

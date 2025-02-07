@@ -45,7 +45,7 @@
 (load "~/.config/emacs/lisp/languages/structurizr-config.el")
 (load "~/.config/emacs/lisp/other/eshell-config.el")
 (load "~/.config/emacs/lisp/other/git-config.el")
-(load "~/.config/emacs/lisp/other/projectile-config.el")
+;; (load "~/.config/emacs/lisp/other/projectile-config.el")
 (load "~/.config/emacs/lisp/other/completion-config.el")
 (load "~/.config/emacs/lisp/other/org-config.el")
 (load "~/.config/emacs/lisp/other/org-present-config.el")
