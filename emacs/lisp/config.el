@@ -19,6 +19,7 @@
       use-package-always-ensure t)
 
 (add-to-list 'load-path "~/.config/emacs/lisp")
+(add-to-list 'load-path "~/.config/emacs/lisp/packages")
 
 ;;; General config
 
