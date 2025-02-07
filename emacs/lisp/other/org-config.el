@@ -3,6 +3,7 @@
 (use-package verb)
 
 (use-package org
+  :ensure nil
   :init
   (add-hook 'org-mode-hook (lambda () (variable-pitch-mode 1)))
 
@@ -19,14 +20,14 @@
   (set-face-attribute 'variable-pitch nil :font "Noto Sans" :weight 'light :height 1.3)
 ;  (set-face-attribute 'variable-pitch nil :font "Poppins" :weight 'light :height 1.3)
   (setq org-hide-emphasis-markers t)
-  (dolist (face '((org-level-1 . (1.3 . nil))
-                  (org-level-2 . (1.1 . nil))
-                  (org-level-3 . (1.05 . nil))
+  (dolist (face '((org-level-1 . (1.1 . nil))
+                  (org-level-2 . (1.0 . nil))
+                  (org-level-3 . (1.0 . nil))
                   (org-level-4 . (1.0 . nil))
-                  (org-level-5 . (1.1 . nil))
-                  (org-level-6 . (1.1 . nil))
-                  (org-level-7 . (1.1 . nil))
-                  (org-level-8 . (1.1 . nil))))
+                  (org-level-5 . (1.0 . nil))
+                  (org-level-6 . (1.0 . nil))
+                  (org-level-7 . (1.0 . nil))
+                  (org-level-8 . (1.0 . nil))))
     (set-face-attribute (car face) nil :font "Noto Sans" :weight 'medium :height (cadr face) :foreground (cddr face)))
 
   ;; Make the document title a bit bigger
@@ -41,20 +42,28 @@
   (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+
+  ;; Tweaks to how org inserts
+  (setq org-insert-heading-respect-content t)
+  (setq org-log-into-drawer t)
+  (setq org-log-done 'time)
+  (setq org-M-RET-may-split-line '((default . nil)))
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAIT(w!)" "|" "MEETING(m!)" "CANCEL(c!)" "DONE(d!)")))
   )
 
 (require 'org-faces)
 
-(use-package visual-fill-column
-  :init
-  (add-hook 'org-mode-hook 'visual-line-fill-column-mode)
+;; (use-package visual-fill-column
+;;   :init
+;;   (add-hook 'org-mode-hook 'visual-line-fill-column-mode)
 
-  :config
-  (setq visual-fill-column-width 110
-        visual-fill-column-center-text 't)
-  )
+;;   :config
+;;   (setq visual-fill-column-width 110
+;;         visual-fill-column-center-text 't)
+;;   )
 
-(use-package org-superstar
-  :pin "nongnu"
-  :init
-  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+;; (use-package org-superstar
+;;   :pin "nongnu"
+;;   :init
+;;   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
