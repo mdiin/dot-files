@@ -49,7 +49,7 @@
   (setq org-log-done 'time)
   (setq org-M-RET-may-split-line '((default . nil)))
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAIT(w!)" "|" "MEETING(m!)" "CANCEL(c!)" "DONE(d!)")))
+        '((sequence "TODO(t)" "DOING(D!)" "WAIT(w!)" "|" "MEETING(m!)" "CANCEL(c!)" "DONE(d!)")))
   )
 
 (require 'org-faces)
