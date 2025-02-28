@@ -16,7 +16,8 @@
 
 (use-package eglot-booster
   :after eglot
-  :config (eglot-booster-mode))
+  ;; :config (eglot-booster-mode)
+  )
 
 (use-package eldoc-box
   :bind (("C-c K" . eldoc-box-help-at-point)))
@@ -24,4 +25,4 @@
 (use-package eglot-semtok
   :load-path "elpa/eglot-supplements/"
   :after eglot
-  :hook ((eglot-connect . 'eglot-semtok-on-connected)))
+  :hook ((eglot-connect . eglot-semtok-on-connected)))
