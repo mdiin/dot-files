@@ -14,9 +14,7 @@
 
 (require 'use-package)
 
-(setq use-package-always-pin "melpa-stable"
-      use-package-always-defer t
-      use-package-always-ensure t)
+(setq use-package-always-pin "melpa-stable")
 
 (add-to-list 'load-path "~/.config/emacs/lisp")
 (add-to-list 'load-path "~/.config/emacs/lisp/packages")
