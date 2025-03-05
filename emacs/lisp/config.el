@@ -19,6 +19,8 @@
 (add-to-list 'load-path "~/.config/emacs/lisp")
 (add-to-list 'load-path "~/.config/emacs/lisp/packages")
 
+(setq use-package-always-ensure t)
+
 ;;; General config
 
 (setq org-clock-persist 'history)
