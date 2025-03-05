@@ -1,7 +1,22 @@
 (use-package lsp-mode
+  :hook ((flix-mode . lsp)
+         ;; (flix-mode . lsp-semantic-tokens-mode)
+         )
+
   :init
   ;; (setq lsp-keymap-prefix "C-c l")
   (setq read-process-output-max (* 1024 1024))
+
+  :config
+  (add-to-list 'lsp-language-id-configuration
+               '(flix-mode . "flix"))
+
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection (lambda ()
+                                                            (flix-mode--ensure)
+                                                            (flix-mode-server-path nil)))
+                    :activation-fn (lsp-activate-on "flix")
+                    :server-id 'flix-lsp))
 
   :commands lsp)
 

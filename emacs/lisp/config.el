@@ -42,6 +42,7 @@
 (load "~/.config/emacs/lisp/languages/kotlin-config.el")
 (load "~/.config/emacs/lisp/languages/yaml-config.el")
 (load "~/.config/emacs/lisp/languages/structurizr-config.el")
+(load "~/.config/emacs/lisp/languages/flix-config.el")
 (load "~/.config/emacs/lisp/languages/lsp-config.el")
 (load "~/.config/emacs/lisp/other/eshell-config.el")
 (load "~/.config/emacs/lisp/other/git-config.el")
