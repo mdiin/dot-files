@@ -87,8 +87,8 @@
   :ensure t
   :bind (("C-x p p" . consult-project-extra-find)))
 
+;; package-vc-install https://github.com/mohkale/consult-eglot.git
 (use-package consult-eglot
-  :load-path "lisp/"
   :init
   (require 'consult-eglot))
 
