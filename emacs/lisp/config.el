@@ -25,6 +25,7 @@
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+(setq confirm-kill-emacs 'yes-or-no-p)
 
 ;;; Config parts
 
