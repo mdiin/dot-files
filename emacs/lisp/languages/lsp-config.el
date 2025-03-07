@@ -1,7 +1,13 @@
 (use-package lsp-mode
-  :hook ((flix-mode . lsp)
-         ;; (flix-mode . lsp-semantic-tokens-mode)
-         )
+  ;; :hook ((flix-mode . (lambda ()
+  ;;                       (setq lsp-semantic-tokens-enable t)
+  ;;                       (setq lsp-semantic-token-faces
+  ;;                             (append lsp-semantic-token-faces '(("modifier" . lsp-face-semhl-static)
+  ;;                                                                ("decorator" . lsp-face-semhl-type))))))
+  ;;        (flix-mode . lsp)
+  ;;        (flix-mode . lsp-semantic-tokens-mode)
+
+  ;;        )
 
   :init
   ;; (setq lsp-keymap-prefix "C-c l")

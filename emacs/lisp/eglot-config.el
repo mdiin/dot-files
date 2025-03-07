@@ -1,8 +1,14 @@
 ;;- LSP
 
+(defun my--eglot-flix-hook ()
+  (eglot-ensure)
+  (eglot-semtok-font-lock-init))
+
 (use-package eglot
   :pin melpa-stable
-  :hook ((clojure-mode . eglot-ensure))
+  :hook ((clojure-mode . eglot-ensure)
+         (flix-mode . my--eglot-flix-hook)
+         )
   :bind (("C-c l a" . eglot-code-actions)
          ("C-c l r" . eglot-rename)
          ("C-c l f i" . eglot-find-implementation)
@@ -12,11 +18,16 @@
          ("C-c l = r" . eglot-format))
 
   :init
-  (setq eglot-managed-mode-hook (list (lambda () (eldoc-mode -1)))))
+  (setq eglot-managed-mode-hook (list (lambda () (eldoc-mode -1))))
+
+  :config
+  (add-to-list 'eglot-server-programs
+               '(flix-mode . flix-mode-server-path))
+  )
 
 (use-package eglot-booster
   :after eglot
-  ;; :config (eglot-booster-mode)
+  :config (eglot-booster-mode)
   )
 
 (use-package eldoc-box

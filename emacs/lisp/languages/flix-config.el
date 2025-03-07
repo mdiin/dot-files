@@ -13,11 +13,6 @@
   :requires lsp-mode
 
   ;; :config
-  ;; (setq-local lsp-semantic-token-faces
-  ;;             (append 'lsp-semantic-token-faces '(("modifier" . lsp-face-semhl-static)
-  ;;                                                 ("decorator" . lsp-face-semhl-type))))
-
-  ;; :config
   ;; (with-eval-after-load 'lsp-mode
   ;;   (add-to-list 'lsp-language-id-configuration
   ;;                '(flix-mode . "flix"))
