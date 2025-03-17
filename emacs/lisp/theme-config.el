@@ -10,4 +10,4 @@
   :config
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil)
-  (load-theme 'modus-vivendi-tinted))
+  (load-theme 'modus-vivendi-tinted t))
