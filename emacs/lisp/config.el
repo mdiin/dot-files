@@ -29,6 +29,7 @@
 
 ;;; Config parts
 
+(load "~/.config/emacs/lisp/other/azure-cli-interaction.el")
 (load "~/.config/emacs/lisp/editorconfig-config.el")
 (load "~/.config/emacs/lisp/ripgrep-config.el")
 (load "~/.config/emacs/lisp/conveniences.el")
