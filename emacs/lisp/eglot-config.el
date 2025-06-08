@@ -1,14 +1,9 @@
 ;;- LSP
 
-(defun my--eglot-flix-hook ()
-  (eglot-ensure)
-  (eglot-semtok-font-lock-init))
-
 (use-package eglot
   :pin melpa-stable
   :hook ((clojure-mode . eglot-ensure)
-         (flix-mode . my--eglot-flix-hook)
-         )
+         (flix-mode . eglot-ensure))
   :bind (("C-c l a" . eglot-code-actions)
          ("C-c l r" . eglot-rename)
          ("C-c l f i" . eglot-find-implementation)
@@ -35,5 +30,43 @@
 
 (use-package eglot-semtok
   :load-path "elpa/eglot-supplements/"
-  :after eglot
-  :hook ((eglot-connect . eglot-semtok-on-connected)))
+  :hook ((eglot-connect . eglot-semtok-on-connected)
+         (flix-mode . eglot-semtok-font-lock-init))
+  :config
+  (setq eglot-semtok-faces
+        '("class"
+          (("" "" font-lock-type-face))
+          "interface"
+          (("" "" font-lock-type-face))
+          "typeParameter"
+          (("" "" font-lock-type-face))
+          "parameter"
+          (("" "" font-lock-variable-name-face))
+          "variable"
+          (("" "" font-lock-variable-name-face))
+          "property"
+          (("" "" font-lock-constant-face))
+          "enumMember"
+          (("" "" font-lock-constant-face))
+          "function"
+          (("" "" font-lock-function-name-face))
+          "method"
+          (("" "" font-lock-function-name-face))
+          "member"
+          (("" "" font-lock-property-name-face))
+          "keyword"
+          (("" "" font-lock-keyword-face))
+          "modifier"
+          (("" "" default))
+          "decorator"
+          (("" "" font-lock-keyword-face))
+          "annotation"
+          (("" "" font-lock-keyword-face))
+          "type"
+          (("" "" font-lock-type-face))
+          "string"
+          (("" "" font-lock-string-face))
+          "number"
+          (("" "" font-lock-number-face))
+          "comment"
+          (("" "" font-lock-comment-face)))))
