@@ -52,6 +52,7 @@
 (load "~/.config/emacs/lisp/other/org-config.el")
 (load "~/.config/emacs/lisp/other/org-present-config.el")
 (load "~/.config/emacs/lisp/rss.el")
+(load "~/.config/emacs/lisp/snippets-config.el")
 
 (eval-after-load "sql"
   '(load-library "sql-indent"))
