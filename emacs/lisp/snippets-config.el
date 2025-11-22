@@ -29,4 +29,7 @@
   ;; either locally or globally. `expand-abbrev' is bound to C-x '.
   ;; (add-hook 'prog-mode-hook #'tempel-abbrev-mode)
   ;; (global-tempel-abbrev-mode)
+
+  :config
+  (setq tempel-path (expand-file-name "~/.config/emacs/templates/*.eld"))
   )
