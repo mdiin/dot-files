@@ -1,9 +1,15 @@
 ;;- LSP
 
+(defun my--eglot-format-buffer-before-save ()
+  (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
+
 (use-package eglot
   :pin melpa-stable
   :hook ((clojure-mode . eglot-ensure)
-         (flix-mode . eglot-ensure))
+         (flix-mode . eglot-ensure)
+         (go-mode . eglot-ensure)
+         (go-mode . my--eglot-format-buffer-before-save)
+         ((js-ts-mode typescript-ts-mode tsx-ts-mode) . eglot-ensure))
   :bind (("C-c l a" . eglot-code-actions)
          ("C-c l r" . eglot-rename)
          ("C-c l f i" . eglot-find-implementation)
@@ -17,7 +23,8 @@
 
   :config
   (add-to-list 'eglot-server-programs
-               '(flix-mode . flix-mode-server-path))
+               '(flix-mode . flix-mode-server-path)
+               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("typescript-language-server" "--stdio")))
   )
 
 (use-package eglot-booster
