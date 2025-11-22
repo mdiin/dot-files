@@ -46,6 +46,7 @@
 (load "~/.config/emacs/lisp/languages/structurizr-config.el")
 (load "~/.config/emacs/lisp/languages/flix-config.el")
 (load "~/.config/emacs/lisp/languages/lsp-config.el")
+(load "~/.config/emacs/lisp/languages/golang-config.el")
 (load "~/.config/emacs/lisp/other/eshell-config.el")
 (load "~/.config/emacs/lisp/other/git-config.el")
 (load "~/.config/emacs/lisp/other/completion-config.el")
