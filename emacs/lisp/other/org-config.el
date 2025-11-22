@@ -14,11 +14,13 @@
          ("C-c C-x r" . org-clock-in-last)
          ("C-c C-x C-r" . org-clock-in-last))
   :config
+  (require 'org-faces)
+
   (define-key org-mode-map (kbd "C-c C-r") verb-command-map)
   (set-face-attribute 'default nil :font "Fantasque Sans Mono" :weight 'light :height 120)
   (set-face-attribute 'fixed-pitch nil :font "Fantasque Sans Mono" :weight 'light :height 120)
   (set-face-attribute 'variable-pitch nil :font "Noto Sans" :weight 'light :height 1.3)
-;  (set-face-attribute 'variable-pitch nil :font "Poppins" :weight 'light :height 1.3)
+                                        ;  (set-face-attribute 'variable-pitch nil :font "Poppins" :weight 'light :height 1.3)
   (setq org-hide-emphasis-markers t)
   (dolist (face '((org-level-1 . (1.1 . nil))
                   (org-level-2 . (1.0 . nil))
@@ -51,19 +53,3 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "DOING(D!)" "WAIT(w!)" "|" "MEETING(m!)" "CANCEL(c!)" "DONE(d!)")))
   )
-
-(require 'org-faces)
-
-;; (use-package visual-fill-column
-;;   :init
-;;   (add-hook 'org-mode-hook 'visual-line-fill-column-mode)
-
-;;   :config
-;;   (setq visual-fill-column-width 110
-;;         visual-fill-column-center-text 't)
-;;   )
-
-;; (use-package org-superstar
-;;   :pin "nongnu"
-;;   :init
-;;   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
