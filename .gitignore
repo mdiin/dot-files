@@ -6,3 +6,5 @@ tmux/resurrect/*
 
 /doom/custom.el
 emacs/init.el
+
+*~
