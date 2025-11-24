@@ -9,7 +9,8 @@
          (flix-mode . eglot-ensure)
          (go-mode . eglot-ensure)
          (go-mode . my--eglot-format-buffer-before-save)
-         ((js-ts-mode typescript-ts-mode tsx-ts-mode) . eglot-ensure))
+         ((js-ts-mode typescript-ts-mode tsx-ts-mode) . eglot-ensure)
+         (typst-ts-mode . eglot-ensure))
   :bind (("C-c l a" . eglot-code-actions)
          ("C-c l r" . eglot-rename)
          ("C-c l f i" . eglot-find-implementation)
@@ -24,8 +25,7 @@
   :config
   (add-to-list 'eglot-server-programs
                '(flix-mode . flix-mode-server-path)
-               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("typescript-language-server" "--stdio")))
-  )
+               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("typescript-language-server" "--stdio"))))
 
 (use-package eglot-booster
   :after eglot
