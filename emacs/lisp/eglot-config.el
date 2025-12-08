@@ -23,10 +23,9 @@
   (setq eglot-managed-mode-hook (list (lambda () (eldoc-mode -1))))
 
   :config
-  (setq eglot-server-programs
-        (list
-         '(flix-mode . flix-mode-server-path)
-         '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("npx" "typescript-language-server" "--stdio")))))
+  (add-to-list 'eglot-server-programs
+               '(flix-mode . flix-mode-server-path)
+               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("npx" "typescript-language-server" "--stdio"))))
 
 (use-package eglot-booster
   :after eglot
