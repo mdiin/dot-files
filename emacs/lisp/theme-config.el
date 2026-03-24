@@ -11,3 +11,7 @@
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil)
   (load-theme 'modus-vivendi-tinted t))
+
+(use-package alabaster-themes
+  :ensure t
+  :commands (alabaster-themes-select))

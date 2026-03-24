@@ -6,6 +6,7 @@
                        ("https://ludic.mataroa.blog/rss/" ludic)
                        ("https://world.hey.com/dhh/feed.atom" dhh-hey-world)
                        ("https://world.hey.com/jason/feed.atom" jason-fried-hey-world)
+                       ("https://www.seangoedecke.com/rss.xml" sean-goedecke)
 
                        ;; Programming languages
                        ("https://clojure.org/feed.xml" clojure)

@@ -34,6 +34,7 @@
 (load "~/.config/emacs/lisp/editorconfig-config.el")
 (load "~/.config/emacs/lisp/ripgrep-config.el")
 (load "~/.config/emacs/lisp/conveniences.el")
+(load "~/.config/emacs/lisp/eca-config.el")
 (load "~/.config/emacs/lisp/theme-config.el")
 (load "~/.config/emacs/lisp/eglot-config.el")
 (load "~/.config/emacs/lisp/tree-sitter-config.el")
