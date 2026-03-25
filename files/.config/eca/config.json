@@ -1,0 +1,48 @@
+{
+    "providers": {
+        "mistral": {
+            "api": "openai-chat",
+            "url": "https://api.mistral.ai/v1",
+            "models": {
+                "devstral-small-2507": {"extraPayload": {"max_completion_tokens": null}},
+                "labs-devstral-small-2512": {"max_completion_tokens": null},
+                "mistral-medium": {"max_completion_tokens": null},
+                "mistral-large-latest": {"max_completion_tokens": null}
+            }
+        },
+        "ollama": {
+            "api": "openai-chat",
+            "url": "http://localhost:11434/",
+            "models": {
+                "qwen3.5:0.8b": {"max_completion_tokens": null}
+            }
+        },
+        "jan": {
+            "api": "openai-chat",
+            "url": "http://localhost:6767/",
+            "models": {
+                "Jan-v3.5-4B-Q4_K_XL": {}
+            }
+        }
+    },
+    "defaultModel": "jan/",
+    "chat": {
+        "model": "mistral/mistral-large-latest"
+    },
+    "agent": {
+        "ralph": {
+            "mode": "subagent",
+            "description": "Ralph Loop agent for iterative coding",
+            "systemPrompt": "You are a Ralph Loop agent. Start fresh each iteration. Follow AGENTS.md and TASKS.md strictly. Never retain context between iterations.",
+            "defaultModel": "jan/Jan-v3.5-4B-Q4_K_XL",
+            "maxSteps": 50,
+            "contextFiles": ["AGENTS.md", "TASKS.md", "src/"],
+            "hooks": {
+                "preRalphIteration": {
+                    "type": "preRequest",
+                    "actions": [{"type": "clearContext"}]
+                }
+            }
+        }
+    }
+}
