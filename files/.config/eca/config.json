@@ -3,11 +3,12 @@
         "mistral": {
             "api": "openai-chat",
             "url": "https://api.mistral.ai/v1",
+            "keyRc": "api.mistral.ai",
             "models": {
                 "devstral-small-2507": {"extraPayload": {"max_completion_tokens": null}},
-                "labs-devstral-small-2512": {"max_completion_tokens": null},
-                "mistral-medium": {"max_completion_tokens": null},
-                "mistral-large-latest": {"max_completion_tokens": null}
+                "labs-devstral-small-2512": {"extraPayload": {"max_completion_tokens": null}},
+                "mistral-medium": {"extraPayload": {"max_completion_tokens": null}},
+                "mistral-large-latest": {"extraPayload": {"max_completion_tokens": null}}
             }
         },
         "ollama": {
