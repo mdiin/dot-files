@@ -7,7 +7,9 @@
 (home-environment
  (packages (specifications->packages
             (list "git"
-                  "direnv")))
+                  "emacs"
+                  "direnv"
+                  "librewolf")))
 
  (services (list (service home-bash-service-type
                           (home-bash-configuration
