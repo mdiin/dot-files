@@ -40,6 +40,7 @@
 (load "~/.config/emacs/lisp/tree-sitter-config.el")
 (load "~/.config/emacs/lisp/format-on-save.el")
 (load "~/.config/emacs/lisp/languages/utils.el")
+(load "~/.config/emacs/lisp/languages/c-sharp.el")
 (load "~/.config/emacs/lisp/languages/typescript-config.el")
 (load "~/.config/emacs/lisp/languages/clojure-config.el")
 (load "~/.config/emacs/lisp/languages/java-config.el")

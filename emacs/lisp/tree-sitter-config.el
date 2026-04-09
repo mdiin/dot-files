@@ -11,7 +11,6 @@
              (c "https://github.com/tree-sitter/tree-sitter-c")
              (cmake "https://github.com/uyha/tree-sitter-cmake")
              (css . ("https://github.com/tree-sitter/tree-sitter-css" "v0.20.0"))
-             (c-sharp . ("https://github.com/tree-sitter/tree-sitter-c-sharp" "v0.23.1"))
              (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
              (elisp "https://github.com/Wilfred/tree-sitter-elisp")
              (go "https://github.com/tree-sitter/tree-sitter-go" "v0.20.0")

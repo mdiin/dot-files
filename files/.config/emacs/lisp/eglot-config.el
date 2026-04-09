@@ -25,9 +25,7 @@
 
   :config
   (add-to-list 'eglot-server-programs
-               '(csharp-ts-mode . ("omnisharp-wrapper"))
-               '(flix-mode . flix-mode-server-path)
-               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("npx" "typescript-language-server" "--stdio"))))
+               '(flix-mode . flix-mode-server-path)))
 
 
 
