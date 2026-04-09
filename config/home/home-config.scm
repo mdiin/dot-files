@@ -11,15 +11,7 @@
                   "direnv"
                   "librewolf")))
 
- (services (list (service home-bash-service-type
-                          (home-bash-configuration
-                           (environment-variables '(("PS1" . "\\[\\e[1;32m\\]\\u \\[\\e[1;34m\\]\\w \\[\\e[0m\\]λ ")
-                                                    ("EDITOR" . "emacsclient")
-                                                    ("TESTCONTAINERS_RYUK_DISABLED" . "true")))
-                           (bash-profile (list
-                                          (plain-file "direnv-hook.sh" "eval \"$(direnv hook bash)\"")))))
-
-                 (service home-openssh-service-type
+ (services (list (service home-openssh-service-type
                           (home-openssh-configuration
                            (add-keys-to-agent "yes")))
 
