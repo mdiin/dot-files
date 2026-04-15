@@ -1,6 +1,6 @@
 (defun my-csharp/set-eglot-program ()
   (setq-local eglot-server-programs
-              (list '((csharp-mode csharp-ts-mode) . ("omnisharp-wrapper" "-lsp")))))
+              (list '((csharp-mode csharp-ts-mode) . ("/home/mvi/.local/share/omnisharp/OmniSharp" "-lsp")))))
 
 (use-package csharp-ts-mode
   :ensure nil
