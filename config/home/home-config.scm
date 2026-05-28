@@ -7,7 +7,8 @@
 (home-environment
  (packages (specifications->packages
             (list "git"
-                  "emacs"
+                  "emacs-pgtk"
+                  "font-nerd-fantasque-sans"
                   "direnv"
                   "librewolf")))
 
