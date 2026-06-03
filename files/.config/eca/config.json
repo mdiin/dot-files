@@ -1,49 +1,58 @@
 {
+    "plugins": {
+        "install": ["allium", "context-mode", "superpowers"]
+    },
+    "autoCompactPercentage": 50,
     "providers": {
         "mistral": {
             "api": "openai-chat",
             "url": "https://api.mistral.ai/v1",
             "keyRc": "api.mistral.ai",
+            "fetchModels": false,
             "models": {
-                "devstral-small-2507": {"extraPayload": {"max_completion_tokens": null}},
-                "labs-devstral-small-2512": {"extraPayload": {"max_completion_tokens": null}},
-                "mistral-medium": {"extraPayload": {"max_completion_tokens": null}},
-                "mistral-large-latest": {"extraPayload": {"max_completion_tokens": null}}
-            }
-        },
-        "ollama": {
-            "api": "openai-chat",
-            "url": "http://localhost:11434/",
-            "models": {
-                "qwen3.5:0.8b": {"max_completion_tokens": null}
+                "devstral-medium-latest": {"extraPayload": {"max_completion_tokens": null}},
+                "ministral-8b-latest": {"extraPayload": {"max_completion_tokens": null}},
+                "devstral-small-latest": {"extraPayload": {"max_completion_tokens": null}}
             }
         },
         "jan": {
             "api": "openai-chat",
             "url": "http://localhost:6767/",
+            "key": "dummy",
             "models": {
-                "Jan-v3.5-4B-Q4_K_XL": {}
+                "Jan-v3.5-4B-Q4_K_XL": {},
+                "Ministral-3-8B-Instruct-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}},
+                "qwen2_5-0_5b-instruct-q4_k_m": {}
+            }
+        },
+        "jan-6767": {
+            "api": "openai-chat",
+            "url": "http://localhost:6767/",
+            "key": "dummy",
+            "models": {
+                "Jan-v3.5-4B-Q4_K_XL": {},
+                "Ministral-3-8B-Instruct-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}}
+            }
+        },
+        "jan-6768": {
+            "api": "openai-chat",
+            "url": "http://localhost:6768/",
+            "key": "dummy",
+            "models": {
+                "qwen2_5-0_5b-instruct-q4_k_m": {}
+            }
+        },
+        "jan-6769": {
+            "api": "openai-chat",
+            "url": "http://localhost:6769/",
+            "key": "dummy",
+            "models": {
+                "Qwen3_6-27B-UD-IQ2_XXS": {}
             }
         }
     },
-    "defaultModel": "jan/",
+    "defaultModel": "jan/Ministral-3-8B-Instruct-2512-Q4_K_M",
     "chat": {
-        "model": "mistral/mistral-large-latest"
-    },
-    "agent": {
-        "ralph": {
-            "mode": "subagent",
-            "description": "Ralph Loop agent for iterative coding",
-            "systemPrompt": "You are a Ralph Loop agent. Start fresh each iteration. Follow AGENTS.md and TASKS.md strictly. Never retain context between iterations.",
-            "defaultModel": "jan/Jan-v3.5-4B-Q4_K_XL",
-            "maxSteps": 50,
-            "contextFiles": ["AGENTS.md", "TASKS.md", "src/"],
-            "hooks": {
-                "preRalphIteration": {
-                    "type": "preRequest",
-                    "actions": [{"type": "clearContext"}]
-                }
-            }
-        }
+        "model": "jan/Ministral-3-8B-Instruct-2512-Q4_K_M"
     }
 }
