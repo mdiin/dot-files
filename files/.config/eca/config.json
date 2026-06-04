@@ -22,32 +22,7 @@
             "models": {
                 "Jan-v3.5-4B-Q4_K_XL": {},
                 "Ministral-3-8B-Instruct-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}},
-                "qwen2_5-0_5b-instruct-q4_k_m": {}
-            }
-        },
-        "jan-6767": {
-            "api": "openai-chat",
-            "url": "http://localhost:6767/",
-            "key": "dummy",
-            "models": {
-                "Jan-v3.5-4B-Q4_K_XL": {},
-                "Ministral-3-8B-Instruct-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}}
-            }
-        },
-        "jan-6768": {
-            "api": "openai-chat",
-            "url": "http://localhost:6768/",
-            "key": "dummy",
-            "models": {
-                "qwen2_5-0_5b-instruct-q4_k_m": {}
-            }
-        },
-        "jan-6769": {
-            "api": "openai-chat",
-            "url": "http://localhost:6769/",
-            "key": "dummy",
-            "models": {
-                "Qwen3_6-27B-UD-IQ2_XXS": {}
+                "Ministral-3-8B-Reasoning-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}}
             }
         }
     },
