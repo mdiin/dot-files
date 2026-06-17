@@ -22,12 +22,13 @@
             "models": {
                 "Jan-v3.5-4B-Q4_K_XL": {},
                 "Ministral-3-8B-Instruct-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}},
-                "Ministral-3-8B-Reasoning-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}}
+                "Ministral-3-8B-Reasoning-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}},
+                "Qwen3_6-35B-A3B-UD-IQ4_XS": {}
             }
         }
     },
-    "defaultModel": "jan/Ministral-3-8B-Instruct-2512-Q4_K_M",
+    "defaultModel": "jan/Qwen3_6-35B-A3B-UD-IQ4_XS",
     "chat": {
-        "model": "jan/Ministral-3-8B-Instruct-2512-Q4_K_M"
+        "model": "jan/Qwen3_6-35B-A3B-UD-IQ4_XS"
     }
 }
