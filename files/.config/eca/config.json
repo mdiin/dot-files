@@ -1,6 +1,6 @@
 {
     "plugins": {
-        "install": ["allium", "context-mode", "superpowers"]
+        "install": ["allium", "superpowers"]
     },
     "autoCompactPercentage": 50,
     "providers": {
