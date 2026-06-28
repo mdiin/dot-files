@@ -31,6 +31,8 @@
 
 (use-package eglot-booster
   :after eglot
+  :vc (:url "https://github.com/jdtsmith/eglot-booster"
+            :branch "main")
   :config (eglot-booster-mode)
   )
 

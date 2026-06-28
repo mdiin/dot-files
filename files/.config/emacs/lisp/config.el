@@ -46,7 +46,6 @@
 (load "~/.config/emacs/lisp/languages/typescript-config.el")
 (load "~/.config/emacs/lisp/languages/clojure-config.el")
 (load "~/.config/emacs/lisp/languages/java-config.el")
-(load "~/.config/emacs/lisp/languages/kotlin-config.el")
 (load "~/.config/emacs/lisp/languages/yaml-config.el")
 (load "~/.config/emacs/lisp/languages/structurizr-config.el")
 (load "~/.config/emacs/lisp/languages/flix-config.el")

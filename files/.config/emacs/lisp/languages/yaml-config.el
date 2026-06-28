@@ -6,4 +6,5 @@
 (use-package yaml-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-mode))
-  (config/maybe-treesit-install-language-grammar 'yaml))
+  ;; (config/maybe-treesit-install-language-grammar 'yaml)
+  )
