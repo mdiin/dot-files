@@ -17,8 +17,9 @@
 
     (service home-ssh-agent-service-type)
 
-    (service home-openssh-service-type
-             (home-openssh-configuration
-              (add-keys-to-agent "yes"))))
+    ;; (service home-openssh-service-type
+    ;;          (home-openssh-configuration
+    ;;           (add-keys-to-agent "yes")))
+    )
 
    %base-home-services)))
