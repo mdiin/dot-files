@@ -1,16 +1,17 @@
 (define-module (config home base-home)
-  #:use-modules (gnu)
-  #:use-modules (gnu home)
-  #:use-modules (gnu home services dotfiles)
-  #:use-modules (gnu home services ssh)
-  #:use-modules (gnu home services shells)
-  #:use-modules (gnu packages emacs)
-  #:use-modules (gnu packages librewolf)
-  #:use-modules (gnu packages rust-apps)
-  #:use-modules (gnu packages version-control)
-  #:use-modules (gnu packages fonts)
-  #:use-modules (gnu packages shellutils)
-  #:use-modules (nongnu packages clojure)
+  #:use-module (gnu)
+  #:use-module (gnu home)
+  #:use-module (gnu home services dotfiles)
+  #:use-module (gnu home services ssh)
+  #:use-module (gnu home services shells)
+  #:use-module (gnu packages emacs)
+  #:use-module (gnu packages librewolf)
+  #:use-module (gnu packages rust-apps)
+  #:use-module (gnu packages version-control)
+  #:use-module (gnu packages fonts)
+  #:use-module (gnu packages shellutils)
+  #:use-module (gnu system shadow)
+  #:use-module (nongnu packages clojure)
   #:export (base-home))
 
 (define base-home
@@ -24,7 +25,7 @@
      git
      font-nerd-fantasque-sans
      direnv))
-   
+
    (services (list (service home-ssh-agent-service-type
                             (home-ssh-agent-configuration
                              (extra-options '("-t" "1h30m"))))

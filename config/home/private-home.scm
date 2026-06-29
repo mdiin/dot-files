@@ -5,7 +5,7 @@
   #:use-module (gnu home services ssh)
   #:use-module (gnu home services dotfiles)
   #:use-module (gnu services)
-  #:use-modules (config home base-home))
+  #:use-module (config home base-home))
 
 (home-environment
  (inherit base-home)
@@ -18,16 +18,7 @@
     (service home-ssh-agent-service-type)
 
     (service home-openssh-service-type
-	     (home-openssh-configuration
-	      (add-keys-to-agent "yes")))
-
-    (service home-files-service-type
-             `((".guile" ,%default-dotguile)
-	       (".Xdefaults" ,%default-xdefaults)))
-
-    (service home-xdg-configuration-files-service-type
-             `(("gdb/gdbinit" ,%default-gdbinit)
-	       ("nano/nanorc" ,%default-nanorc)
-	       )))
+             (home-openssh-configuration
+              (add-keys-to-agent "yes"))))
 
    %base-home-services)))
