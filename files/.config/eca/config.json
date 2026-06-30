@@ -1,8 +1,8 @@
 {
     "plugins": {
-        "install": ["allium", "superpowers"]
+        "install": ["allium", "superpowers", "fp-style"]
     },
-    "autoCompactPercentage": 50,
+    "autoCompactPercentage": 70,
     "providers": {
         "mistral": {
             "api": "openai-chat",
@@ -19,11 +19,34 @@
             "api": "openai-chat",
             "url": "http://localhost:6767/",
             "key": "dummy",
+            "fetchModels": false,
             "models": {
-                "Jan-v3.5-4B-Q4_K_XL": {},
-                "Ministral-3-8B-Instruct-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}},
-                "Ministral-3-8B-Reasoning-2512-Q4_K_M": {"extraPayload": {"max_completion_tokens": null}},
-                "Qwen3_6-35B-A3B-UD-IQ4_XS": {}
+                "Jan-v3.5-4B-Q4_K_XL": {
+                    "limit":{
+                        "context": 32768,
+                        "output": 4096
+                    }
+                },
+                "Ministral-3-8B-Instruct-2512-Q4_K_M": {
+                    "limit":{
+                        "context": 32768,
+                        "output": 4096
+                    },
+                    "extraPayload": {"max_completion_tokens": null}
+                },
+                "Ministral-3-8B-Reasoning-2512-Q4_K_M": {
+                    "limit":{
+                        "context": 32768,
+                        "output": 4096
+                    },
+                    "extraPayload": {"max_completion_tokens": null}
+                },
+                "Qwen3_6-35B-A3B-UD-IQ4_XS": {
+                    "limit":{
+                        "context": 32768,
+                        "output": 4096
+                    }
+                }
             }
         }
     },
