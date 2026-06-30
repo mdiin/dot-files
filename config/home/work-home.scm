@@ -1,6 +1,8 @@
 (define-module (config home work-home)
+  #:use-module (gnu)
   #:use-module (gnu home)
-  #:use-modules (config home base-home))
+  #:use-module (gnu home services ssh)
+  #:use-module (config home base-home))
 
 (home-environment
  (inherit base-home)
