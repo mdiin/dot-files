@@ -1,0 +1,9 @@
+*~
+/.dir-locals.el
+pg_data/
+.classpath
+.factorypath
+.settings/
+.project
+.dirge
+.dir-locals.el
