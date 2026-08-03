@@ -1,6 +1,6 @@
 {
     "plugins": {
-        "install": ["allium", "superpowers", "fp-style"]
+        "install": ["allium", "superpowers", "fp-style", "caveman", "context-mode"]
     },
     "autoCompactPercentage": 70,
     "providers": {
@@ -13,6 +13,23 @@
                 "devstral-medium-latest": {"extraPayload": {"max_completion_tokens": null}},
                 "ministral-8b-latest": {"extraPayload": {"max_completion_tokens": null}},
                 "devstral-small-latest": {"extraPayload": {"max_completion_tokens": null}}
+            }
+        },
+        "ramalama": {
+            "api": "openai-chat",
+            "url": "http://127.0.0.1:9090",
+            "completionUrlRelativePath": "/v1/chat/completions",
+            "httpClient": { "version": "http-1.1" },
+            "key": "sk-noop",
+            "fetchModels": false,
+            "models": {
+                "ministral-3-3b": {
+                    "limit": {
+                        "context": 32768,
+                        "output": 4096
+                    },
+                    "extraPayload": {"max_completion_tokens": null}
+                }
             }
         },
         "jan": {
@@ -50,8 +67,8 @@
             }
         }
     },
-    "defaultModel": "jan/Qwen3_6-35B-A3B-UD-IQ4_XS",
+    "defaultModel": "ramalama/ministral-3-3b",
     "chat": {
-        "model": "jan/Qwen3_6-35B-A3B-UD-IQ4_XS"
+        "model": "ramalama/ministral-3-3b"
     }
 }
