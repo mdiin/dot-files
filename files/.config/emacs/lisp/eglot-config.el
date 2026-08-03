@@ -39,6 +39,9 @@
 (use-package eldoc-box
   :bind (("C-c K" . eldoc-box-help-at-point)))
 
+(use-package eglot-supplements
+  :vc (:url "https://codeberg.org/harald/eglot-supplements"))
+
 (use-package eglot-semtok
   :load-path "elpa/eglot-supplements/"
   :hook ((eglot-connect . eglot-semtok-on-connected)

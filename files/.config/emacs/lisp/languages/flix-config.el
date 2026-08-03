@@ -1,6 +1,6 @@
 ;;- Flix
 (use-package toml
-  :vc (:url "https://github.com/mdiin/emacs-toml"
+  :vc (:url "https://github.com/gongo/emacs-toml"
             :branch "master"))
 
 (use-package flix-mode
