@@ -31,6 +31,7 @@
 
 (load "~/.config/emacs/lisp/modeline-config.el")
 (load "~/.config/emacs/lisp/other/direnv-config.el")
+(load "~/.config/emacs/lisp/other/mise-config.el")
 (load "~/.config/emacs/lisp/other/dired-config.el")
 (load "~/.config/emacs/lisp/other/azure-cli-interaction.el")
 (load "~/.config/emacs/lisp/editorconfig-config.el")
