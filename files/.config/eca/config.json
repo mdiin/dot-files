@@ -1,6 +1,6 @@
 {
     "plugins": {
-        "install": ["allium", "superpowers", "fp-style", "caveman", "context-mode"]
+        "install": ["allium", "superpowers", "fp-style"]
     },
     "autoCompactPercentage": 70,
     "providers": {
@@ -16,50 +16,20 @@
             }
         },
         "ramalama": {
-            "api": "openai-chat",
-            "url": "http://127.0.0.1:9090",
+            "api": "custom",
+            "url": "http://127.0.0.1:9080/v1",
             "completionUrlRelativePath": "/v1/chat/completions",
             "httpClient": { "version": "http-1.1" },
-            "key": "sk-noop",
             "fetchModels": false,
             "models": {
-                "ministral-3-3b": {
+                "gemma-4-E2B-it": {
                     "limit": {
-                        "context": 32768,
-                        "output": 4096
-                    },
-                    "extraPayload": {"max_completion_tokens": null}
-                }
-            }
-        },
-        "jan": {
-            "api": "openai-chat",
-            "url": "http://localhost:6767/",
-            "key": "dummy",
-            "fetchModels": false,
-            "models": {
-                "Jan-v3.5-4B-Q4_K_XL": {
-                    "limit":{
                         "context": 32768,
                         "output": 4096
                     }
                 },
-                "Ministral-3-8B-Instruct-2512-Q4_K_M": {
-                    "limit":{
-                        "context": 32768,
-                        "output": 4096
-                    },
-                    "extraPayload": {"max_completion_tokens": null}
-                },
-                "Ministral-3-8B-Reasoning-2512-Q4_K_M": {
-                    "limit":{
-                        "context": 32768,
-                        "output": 4096
-                    },
-                    "extraPayload": {"max_completion_tokens": null}
-                },
-                "Qwen3_6-35B-A3B-UD-IQ4_XS": {
-                    "limit":{
+                "gemma-4-E4B-it": {
+                    "limit": {
                         "context": 32768,
                         "output": 4096
                     }
@@ -67,8 +37,5 @@
             }
         }
     },
-    "defaultModel": "ramalama/ministral-3-3b",
-    "chat": {
-        "model": "ramalama/ministral-3-3b"
-    }
+    "defaultModel": "ramalama/gemma-4-E2B-it"
 }
