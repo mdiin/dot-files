@@ -16,8 +16,12 @@
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
 
+(use-package dired-hacks
+  :vc (:url "https://github.com/Fuco1/dired-hacks"
+            :branch "master"))
+
 (use-package dired-subtree
-  :ensure t
+  :load-path "elpa/dired-hacks/"
   :bind (("C-, i" . dired-subtree-insert)
          ("C-, C-i" . dired-subtree-insert)
          ("C-, $" . dired-subtree-remove)
