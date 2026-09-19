@@ -1,6 +1,9 @@
 {
     "plugins": {
-        "install": ["allium", "superpowers", "fp-style"]
+        "emcli": {
+            "source": "https://github.com/mdiin/emcli.git"
+        },
+        "install": []
     },
     "autoCompactPercentage": 70,
     "providers": {
@@ -16,9 +19,9 @@
             }
         },
         "ramalama": {
-            "api": "custom",
-            "url": "http://127.0.0.1:9080/v1",
-            "completionUrlRelativePath": "/v1/chat/completions",
+            "api": "openai-chat",
+            "url": "http://localhost:9080/v1",
+            "completionUrlRelativePath": "/chat/completions",
             "httpClient": { "version": "http-1.1" },
             "fetchModels": false,
             "models": {
@@ -35,7 +38,16 @@
                     }
                 }
             }
+        },
+        "deepseek": {
+          "api": "openai-chat",
+          "url": "https://api.deepseek.com",
+          "models": {
+            "deepseek-v4-flash": {}
+          },
+          "key": "sk-4f60000dd0f149aba74fad2523cf5520"
         }
     },
-    "defaultModel": "ramalama/gemma-4-E2B-it"
+    "defaultModel": "ramalama/gemma-4-E2B-it",
+    "$schema": "https://eca.dev/config.json"
 }
