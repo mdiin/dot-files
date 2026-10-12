@@ -1,0 +1,5 @@
+- Use conventional commits
+- Be concise
+- Only include message body if anything is surprising
+- **If surprising**: Focus why
+- Do not add co-author lines
