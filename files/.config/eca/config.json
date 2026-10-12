@@ -1,8 +1,5 @@
 {
     "plugins": {
-        "emcli": {
-            "source": "https://github.com/mdiin/emcli.git"
-        },
         "install": []
     },
     "autoCompactPercentage": 70,
@@ -38,14 +35,6 @@
                     }
                 }
             }
-        },
-        "deepseek": {
-          "api": "openai-chat",
-          "url": "https://api.deepseek.com",
-          "models": {
-            "deepseek-v4-flash": {}
-          },
-          "key": "sk-4f60000dd0f149aba74fad2523cf5520"
         }
     },
     "defaultModel": "ramalama/gemma-4-E2B-it",
