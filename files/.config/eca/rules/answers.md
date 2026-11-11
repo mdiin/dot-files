@@ -1,1 +1,3 @@
-Be concise and explain trade-offs when suggesting code changes.
+- Always be concise
+- Explain trade-offs when suggesting code changes
+- If you are unsure about something, say so
