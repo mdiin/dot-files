@@ -1,3 +1,5 @@
+;;; ...  -*- lexical-binding: t -*-
+
 (use-package denote
   :pin "gnu"
   :ensure t

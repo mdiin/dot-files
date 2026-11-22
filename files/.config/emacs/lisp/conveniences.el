@@ -1,4 +1,4 @@
-;;; Expand region
+;;; Expand region  -*- lexical-binding: t; -*-
 
 (use-package expand-region
   :bind ("C-=" . er/expand-region))

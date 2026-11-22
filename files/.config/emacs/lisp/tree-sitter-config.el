@@ -1,4 +1,4 @@
-;;- Tree-sitter
+;;- Tree-sitter  -*- lexical-binding: t; -*-
 
 (use-package treesit-auto)
 

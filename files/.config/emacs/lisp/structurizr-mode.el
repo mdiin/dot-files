@@ -1,4 +1,4 @@
-;;; structurizr-mode.el --- Major mode for editing Structurizr dsl files
+;;; structurizr-mode.el --- Major mode for editing Structurizr dsl files  -*- lexical-binding: t; -*-
 
 ;; Author: Giles Paterson <giles@vurt.uk>
 ;; Created: 15 June 2022
@@ -63,12 +63,12 @@
 (defvar structurizr-mode-syntax-table nil "Syntax table for `structurizr-mode'.")
 
 (setq structurizr-mode-syntax-table
-  (let ((syntax-table (make-syntax-table)))
-    ; Comment styles are the same as C++/Java
-    (modify-syntax-entry ?/ ". 124" syntax-table)
-    (modify-syntax-entry ?* ". 23b" syntax-table)
-    (modify-syntax-entry ?\n ">" syntax-table)
-    syntax-table))
+      (let ((syntax-table (make-syntax-table)))
+                                        ; Comment styles are the same as C++/Java
+        (modify-syntax-entry ?/ ". 124" syntax-table)
+        (modify-syntax-entry ?* ". 23b" syntax-table)
+        (modify-syntax-entry ?\n ">" syntax-table)
+        syntax-table))
 
 ;; indentation
 (defvar structurizr-indent-offset 4

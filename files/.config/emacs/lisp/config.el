@@ -1,4 +1,4 @@
-;;; Package management
+;;; Package management  -*- lexical-binding: t; -*-
 
 (require 'package)
 

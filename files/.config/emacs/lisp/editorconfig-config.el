@@ -1,4 +1,4 @@
-;;; Editorconfig
+;;; Editorconfig  -*- lexical-binding: t; -*-
 
 (use-package editorconfig
   :ensure t

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defvar my/line-selected-window (frame-selected-window))
 (defun my/line-set-selected-window (&rest _args)
   (when (not (minibuffer-window-active-p (frame-selected-window)))

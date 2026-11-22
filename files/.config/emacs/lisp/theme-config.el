@@ -1,4 +1,4 @@
-;;; Theme
+;;; Theme  -*- lexical-binding: t; -*-
 
 (unless (package-installed-p 'solarized)
   (package-install 'solarized-theme))

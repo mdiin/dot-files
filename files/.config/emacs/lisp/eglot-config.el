@@ -1,4 +1,4 @@
-;;- LSP
+;;- LSP  -*- lexical-binding: t; -*-
 
 (defun my--eglot-format-buffer-before-save ()
   (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
