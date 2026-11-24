@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defconst my/stored-mode-line-format mode-line-format)
 
 (defun my/org-present-start ()

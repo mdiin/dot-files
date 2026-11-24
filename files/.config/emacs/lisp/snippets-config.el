@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package tempel
   ;; Require trigger prefix before template name when completing.
   ;; :custom
