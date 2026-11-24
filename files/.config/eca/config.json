@@ -37,6 +37,6 @@
             }
         }
     },
-    "defaultModel": "ramalama/gemma-4-E2B-it",
+    "defaultModel": "anthropic/claude-haiku-5-5",
     "$schema": "https://eca.dev/config.json"
 }
