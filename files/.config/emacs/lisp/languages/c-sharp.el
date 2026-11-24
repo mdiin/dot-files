@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (defun my-csharp/set-eglot-program ()
   (setq-local eglot-server-programs
               (list '((csharp-mode csharp-ts-mode) . ("/home/mvi/.local/share/omnisharp/OmniSharp" "-lsp")))))

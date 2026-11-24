@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;- Flix
 (use-package toml
   :vc (:url "https://github.com/gongo/emacs-toml"

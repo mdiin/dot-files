@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (use-package lsp-mode
   ;; :hook ((flix-mode . (lambda ()
   ;;                       (setq lsp-semantic-tokens-enable t)

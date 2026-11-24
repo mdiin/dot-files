@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; YAML
 
 ;; (unless (package-installed-p 'yaml-mode)

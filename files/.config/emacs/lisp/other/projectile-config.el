@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; Projectile
 
 (unless (package-installed-p 'projectile)

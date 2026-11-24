@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;- Java
 
 (use-package eglot-java-lombok

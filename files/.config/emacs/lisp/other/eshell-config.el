@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; Eshell
 
 (defun eshell-new()

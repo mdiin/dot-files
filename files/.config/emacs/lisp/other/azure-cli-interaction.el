@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (require 'json)
 
 (defun my--json-from-program-run (program &rest args)

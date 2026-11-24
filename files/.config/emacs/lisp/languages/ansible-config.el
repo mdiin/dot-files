@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;- Ansible
 
 (use-package ansible)
