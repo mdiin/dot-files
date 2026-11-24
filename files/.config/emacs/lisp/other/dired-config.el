@@ -12,6 +12,9 @@
   (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
   (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
 
+  ;; Reverting the sidebar after save-buffer etc. costs ~100 ms and ~1 MB
+  ;; per run; `auto-revert-mode' (enabled in the hook above) covers it.
+  (setq dired-sidebar-refresh-on-special-commands nil)
   (setq dired-sidebar-subtree-line-prefix "  ")
   ;; (setq dired-sidebar-theme 'vscode)
   (setq dired-sidebar-use-term-integration t)
