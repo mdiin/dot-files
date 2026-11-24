@@ -1,5 +1,5 @@
 ---
-name: Clojure development
+name: clojure-style
 description: Provides guidance on idiomatic Clojure development, emphasizing the use of standard library sequence functions, transducers, and reduce over loop/recur.
 ---
 
