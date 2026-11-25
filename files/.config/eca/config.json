@@ -38,5 +38,17 @@
         }
     },
     "defaultModel": "anthropic/claude-haiku-5-5",
-    "$schema": "https://eca.dev/config.json"
+    "$schema": "https://eca.dev/config.json",
+    "hooks": {
+        "notify-me": {
+            "type": "preToolCall",
+            "visible": false,
+            "actions": [
+                {
+                    "type": "shell",
+                    "file": "~/.config/eca/hooks/notifications.sh"
+                }
+            ]
+        }
+    }
 }
